@@ -1,0 +1,52 @@
+.head-img {
+    width: 100%;
+    height: 660px;
+    background-color: royalblue;
+    white-space: nowrap;
+    text-align: center;
+    position: relative;
+  
+    .title {
+      padding-top: 70px;
+      padding-bottom: 42px;
+    }
+  
+    .half-left {
+      width: 100%;
+      height: 500px;
+      background-color: seagreen;
+    }
+  
+    .half-right {
+      width: 100%;
+      height: 500px;
+      vertical-align: middle;
+      background-color: pink;
+    }
+  }
+  
+  .half-right .about-us-description {
+    width: 80%;
+    text-align: left;
+    white-space: pre-wrap;
+    color: blue;
+  }
+
+  .vertical-image {
+    width: 400px;
+    height: 400px;
+    margin-left: 200px;
+    background-color: salmon;
+}
+
+.absolute-image {
+    width: 350px;
+    height: 350px;
+    bottom: 30px;
+    right: -200px;
+
+    position: absolute;
+    background-color: rebeccapurple;
+    border: 19px solid #fff;
+    z-index: 1;
+}
