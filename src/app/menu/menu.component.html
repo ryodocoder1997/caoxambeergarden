@@ -2,35 +2,48 @@
     <div class="container-header">
         <h1 class="body-title">Các loại thức uống</h1>
 
-        <div class="container-fluid" style="background-color: yellow;">
+        <div class="container-fluid"
+             style="background-color: yellow;">
             <div class="row">
 
                 <div class="col-4">
-                    <div class="btn-group btn-group-toggle group-button" data-toggle="buttons">
+                    <div class="btn-group btn-group-toggle group-button"
+                         data-toggle="buttons">
                         <label class="btn variant-button active">
-                            <input type="radio" name="options" id="option1" autocomplete="off" checked> Dạng chai
+                            <input type="radio"
+                                   name="options"
+                                   id="option1"
+                                   autocomplete="off"
+                                   checked> Dạng chai
                         </label>
                         <label class="btn variant-button">
-                            <input type="radio" name="options" id="option2" autocomplete="off"> Dạng ly
+                            <input type="radio"
+                                   name="options"
+                                   id="option2"
+                                   autocomplete="off"> Dạng ly
                         </label>
                     </div>
                 </div>
 
                 <div class="col-8">
                     <div class="search-bar">
-                        <input class="form-control" type="text" placeholder="Tìm nhanh tên theo sản phẩm" aria-label="Search">
-                        <span><i class="fas fa-search search-icon"></i></span>
+                        <input class="form-control"
+                               type="text"
+                               placeholder="Tìm nhanh tên theo sản phẩm"
+                               aria-label="Search">
+                        <span><i class="fa fa-search search-icon"></i></span>
                     </div>
                 </div>
 
             </div>
         </div>
-        <div class="col-5 menu-list">
-            <div class="item"></div>
-        </div>
-        <div class="col-7">
-
+        <div class="row">
+            <div class="col-5 menu-list">
+                <app-menu-list></app-menu-list>
+            </div>
+            <div class="col-6 menu-detail">
+                <app-menu-detail></app-menu-detail>
+            </div>
         </div>
     </div>
 </div>
-<app-menu-list></app-menu-list>
