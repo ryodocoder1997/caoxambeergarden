@@ -2,4 +2,7 @@
     <ng-container *ngFor="let item of [].constructor(totalPage); let i = index">
         <span class="page-number" [class.active]="i === pageIndex" (click)="onChangeSelectPage(i)">{{i + 1}}</span>
     </ng-container>
+    <ng-container *ngIf="totalPage === 0">
+        <span class="page-none"></span>
+    </ng-container>
 </div>

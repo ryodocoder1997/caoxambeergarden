@@ -1,13 +1,13 @@
 <div class="menu-detail">
     <div class="menu-card">
-        <div class="container">
+        <div class="container" *ngIf="selectedRow">
             <div class="row">
                 <div class="col-4">
                     <img class="item-img">
                 </div>
                 <div class="col-8">
                     <h2 class="item-name">{{selectedRow.name}}</h2>
-                    <hr class="hr"/>
+                    <hr class="hr" />
                     <div class="item-description">{{selectedRow.summaryDescription}}</div>
                     <span class="item-abv">ABV: {{selectedRow.abv}}%</span>
                     <span class="item-ibu">IBU: {{selectedRow.ibu}}</span>
@@ -16,6 +16,18 @@
                 </div>
             </div>
             <div class="item-long-description">{{selectedRow.detailDescription}}</div>
+        </div>
+
+        <div class="container" *ngIf="!selectedRow">
+            <div class="row">
+                <div class="col-4">
+                    <img class="item-img">
+                </div>
+                <div class="col-8">
+                    <h2 class="item-name">Không tìm thấy dữ liệu nào...</h2>
+                    <hr class="hr" />
+                </div>
             </div>
         </div>
     </div>
+</div>
