@@ -1,0 +1,5 @@
+<div class="pagination">
+    <ng-container *ngFor="let item of [].constructor(totalPage); let i = index">
+        <span class="page-number" [class.active]="i === pageIndex" (click)="onChangeSelectPage(i)">{{i + 1}}</span>
+    </ng-container>
+</div>

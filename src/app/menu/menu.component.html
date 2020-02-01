@@ -1,36 +1,28 @@
-<div class="container-fluid body">
+<div class="container-fluid body"
+style="background: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url(../../assets/banner2.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: center;">
     <div class="container-header">
         <h1 class="body-title">Các loại thức uống</h1>
 
-        <div class="container-fluid"
-             style="background-color: yellow;">
+        <div class="container-fluid">
             <div class="row">
-
                 <div class="col-4">
-                    <div class="btn-group btn-group-toggle group-button"
-                         data-toggle="buttons">
+                    <div class="btn-group btn-group-toggle group-button" data-toggle="buttons">
                         <label class="btn variant-button active">
-                            <input type="radio"
-                                   name="options"
-                                   id="option1"
-                                   autocomplete="off"
-                                   checked> Dạng chai
+                            <input type="radio" name="options" id="option1" autocomplete="off" checked> Dạng chai
                         </label>
                         <label class="btn variant-button">
-                            <input type="radio"
-                                   name="options"
-                                   id="option2"
-                                   autocomplete="off"> Dạng ly
+                            <input type="radio" name="options" id="option2" autocomplete="off"> Dạng ly
                         </label>
                     </div>
                 </div>
 
                 <div class="col-8">
                     <div class="search-bar">
-                        <input class="form-control"
-                               type="text"
-                               placeholder="Tìm nhanh tên theo sản phẩm"
-                               aria-label="Search">
+                        <input class="form-control" type="text" placeholder="Tìm nhanh tên theo sản phẩm"
+                            aria-label="Search" (input)="onTextChange($event)">
                         <span><i class="fa fa-search search-icon"></i></span>
                     </div>
                 </div>
@@ -39,11 +31,18 @@
         </div>
         <div class="row">
             <div class="col-5 menu-list">
-                <app-menu-list></app-menu-list>
+                <app-menu-list
+                [dataSource]="dataView"
+                (selectedRow)="onSelectRow($event)"></app-menu-list>
             </div>
             <div class="col-6 menu-detail">
-                <app-menu-detail></app-menu-detail>
+                <app-menu-detail [selectedRow]="selectedRow"></app-menu-detail>
             </div>
         </div>
     </div>
+    <app-pagination class="pagination" 
+                    [totalPage]="totalPage"
+                    [pageIndex]="pageIndex"
+                    [pageSize]="pageSize"
+                    (onSelectPage)="onSelectPage($event)"></app-pagination>
 </div>

@@ -9,6 +9,9 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { MenuComponent } from './menu/menu.component';
 import { MenuListComponent } from './menu/menu-list/menu-list.component';
 import { MenuDetailComponent } from './menu/menu-detail/menu-detail.component';
+import { PaginationComponent } from './shared/components/pagination/pagination.component';
+import { FooterComponent } from './footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { MenuDetailComponent } from './menu/menu-detail/menu-detail.component';
     AboutUsComponent,
     MenuComponent,
     MenuListComponent,
-    MenuDetailComponent
+    MenuDetailComponent,
+    PaginationComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

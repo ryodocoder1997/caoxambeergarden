@@ -2,18 +2,20 @@
     <div class="menu-card">
         <div class="container">
             <div class="row">
-                <div class="col-4" style="background-color: red;">
+                <div class="col-4">
                     <img class="item-img">
                 </div>
-                <div class="col-8" style="background-color: yellowgreen;">
-                    <h2 class="item-name">Beer 1</h2>
+                <div class="col-8">
+                    <h2 class="item-name">{{selectedRow.name}}</h2>
                     <hr class="hr"/>
-                    <div class="item-description">Earthy, smooth, with a rich caramel body & hints of cinnamon & nutmeg.</div>
-                    <span class="item-abv">ABV: 52%</span>
-                    <span class="item-ibu">IBU: 25</span>
-                    <div class="item-made-in">Made In Germany</div>
+                    <div class="item-description">{{selectedRow.summaryDescription}}</div>
+                    <span class="item-abv">ABV: {{selectedRow.abv}}%</span>
+                    <span class="item-ibu">IBU: {{selectedRow.ibu}}</span>
+                    <div class="item-color">Màu: {{selectedRow.color}}</div>
+                    <div class="item-price">{{selectedRow.price | currency : ' ' : 'code' : '0.0-0'}}đ</div>
                 </div>
             </div>
+            <div class="item-long-description">{{selectedRow.detailDescription}}</div>
             </div>
         </div>
     </div>

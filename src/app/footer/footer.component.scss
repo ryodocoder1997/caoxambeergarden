@@ -1,0 +1,46 @@
+.footer-experience {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+
+    .footer-title {
+        margin-top: -100px;
+    }
+}
+
+.footer-information {
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(#051832, #010710);
+    color: #fff;
+    display: inline-block;
+
+    .club-info {
+        padding: 50px 40px;
+
+        .club-name {
+            font-size: 50px;
+        }
+
+        .club-brand {
+            font-size: 20px;
+        }
+
+        .icon {
+            padding-right: 50px;
+        }
+    }
+
+    .google-map {
+        top: -60px;
+    }
+
+    .footer-copyright {
+        text-align: center;
+        vertical-align: bottom;
+        color: rgba(255, 255, 255, 0.5);
+    }
+}

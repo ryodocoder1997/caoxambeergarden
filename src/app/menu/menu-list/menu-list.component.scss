@@ -10,12 +10,13 @@
         display: flex;
         text-align: center;
         list-style-type: none;
-        margin-bottom: 15px;
+        margin: 15px auto;
         padding: 0 1rem;
         margin: 0 0 1rem;
 
         .active {
             font-weight: bold;
+            font-style: italic;
         }
 
         section {
@@ -30,6 +31,7 @@
                 align-items: center;
                 font-size: 16px;
                 margin-bottom: 10px;
+                cursor: pointer;
                 
                 .spacer {
                     content: '';

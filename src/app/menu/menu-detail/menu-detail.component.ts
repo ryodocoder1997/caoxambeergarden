@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { MenuDrinks } from 'src/model/menu-drinks.model';
 
 @Component({
   selector: 'app-menu-detail',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuDetailComponent implements OnInit {
 
+  @Input() selectedRow: MenuDrinks;
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }

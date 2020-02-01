@@ -1,42 +1,44 @@
 .head-img {
     width: 100%;
     height: 660px;
-    background-color: royalblue;
     white-space: nowrap;
     text-align: center;
-    position: relative;
-  
-    .title {
-      padding-top: 70px;
-      padding-bottom: 42px;
-    }
-  
-    .half-left {
-      width: 100%;
-      height: 500px;
-      background-color: seagreen;
-    }
-  
-    .half-right {
-      width: 100%;
-      height: 500px;
-      vertical-align: middle;
-      background-color: pink;
-    }
+    position: absolute;
   }
+.content {
+  width: 100%;
+  .title {
+    padding-top: 70px;
+    padding-bottom: 42px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .half-left {
+    width: 100%;
+    height: 500px;
+  }
+
+  .half-right {
+    width: 100%;
+    height: 500px;
+    vertical-align: middle;
+    padding-right: 0;
+  }
+}
   
   .half-right .about-us-description {
     width: 80%;
     text-align: left;
     white-space: pre-wrap;
-    color: blue;
+    font-size: 16px;
+    color: #fff;
   }
 
   .vertical-image {
     width: 400px;
     height: 400px;
     margin-left: 200px;
-    background-color: salmon;
 }
 
 .absolute-image {
@@ -46,7 +48,6 @@
     right: -200px;
 
     position: absolute;
-    background-color: rebeccapurple;
     border: 19px solid #fff;
     z-index: 1;
 }

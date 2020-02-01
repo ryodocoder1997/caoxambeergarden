@@ -1,56 +1,17 @@
 <ul class="menu">
     <li class="menu-item">
         <section>
-            <header class="active">
-                <span class="item-name">Beer 1</span>
-                <span class="spacer"></span>
-                <span class="item-price">10.000đ</span>
-            </header>
-            <header>
-                <span class="item-name">Beer 2</span>
-                <span class="spacer"></span>
-                <span class="item-price">10.000đ</span>
-            </header>
-            <header>
-                <span class="item-name">Beer 3</span>
-                <span class="spacer"></span>
-                <span class="item-price">10.000đ</span>
-            </header>
-            <header>
-                <span class="item-name">Beer 4</span>
-                <span class="spacer"></span>
-                <span class="item-price">10.000đ</span>
-            </header>
-            <header>
-                <span class="item-name">Beer 5</span>
-                <span class="spacer"></span>
-                <span class="item-price">10.000đ</span>
-            </header>
-            <header>
-                <span class="item-name">Beer 6</span>
-                <span class="spacer"></span>
-                <span class="item-price">10.000đ</span>
-            </header>
-            <header>
-                <span class="item-name">Beer 7</span>
-                <span class="spacer"></span>
-                <span class="item-price">10.000đ</span>
-            </header>
-            <header>
-                <span class="item-name">Beer 8</span>
-                <span class="spacer"></span>
-                <span class="item-price">10.000đ</span>
-            </header>
-            <header>
-                <span class="item-name">Beer 9</span>
-                <span class="spacer"></span>
-                <span class="item-price">10.000đ</span>
-            </header>
-            <header>
-                <span class="item-name">Beer 10</span>
-                <span class="spacer"></span>
-                <span class="item-price">10.000đ</span>
-            </header>
+                <ng-container *ngFor="let item of dataSource">
+                    <header (click)="onSelect(item)" [class.active]="item.isSelect">
+                        <span class="item-name">{{item.name}}</span>
+                        <span class="spacer"></span>
+                        <span class="item-price">{{item.price | currency : ' ' : 'code' : '0.0-0'}}đ</span>
+                    </header>
+                </ng-container>
+  
+                <header *ngIf="dataSource.length === 0">
+                    <span class="item-name active">Không tìm thấy dữ liệu nào...</span>
+                </header>
         </section>
     </li>
 </ul>
