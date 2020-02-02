@@ -86,11 +86,13 @@ export class MenuComponent implements OnInit {
     this.searchText = event.target.value;
     if (this.searchText === '') {
       this.calculateDataAndPaging();
+      this.dataView[0].isSelect = true;
     } else {
       this.dataFilter = this.dataSource;
       this.dataFilter = this.dataFilter.filter(x => x.name.toLowerCase().includes(this.searchText.toLowerCase()));
       this.dataView = this.dataFilter;
       this.calculateDataAndPaging(true);
+      this.dataView[0].isSelect = true;
     }
   }
 }
