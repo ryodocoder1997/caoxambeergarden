@@ -25,3 +25,52 @@ nav {
     padding-left: 0px;
     padding-right: 0px;
 }
+
+.ml-auto {
+    margin-left: 228px !important;
+}
+
+// -------------------------------------------- RESPONSIVE --------------------------------------------
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        width: 100vw;
+        position: relative;
+        ;
+    }
+
+    .nav-logo {
+        position: relative;
+        width: 1.75em;
+    }
+
+    .nav-padding {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .navbar-nav {
+        position: relative;
+        display: inline-block;
+        width: 33.33%;
+        display: table;
+
+        .nav-item {
+            margin: 0;
+            display: table-cell;
+
+            .nav-link {
+                font-size: 0.4em;
+                font-weight: 600;
+            }
+        }
+    }
+    .mr-auto {
+        margin-right: unset !important;
+        float: left;
+    }
+
+    .ml-auto {
+        margin-left: unset !important;
+    }
+}
