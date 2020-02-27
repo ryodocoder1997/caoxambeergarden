@@ -35,8 +35,15 @@ nav {
 @media screen and (max-width: 768px) {
     .navbar {
         width: 100vw;
+        height: 77.83px;
         position: relative;
-        ;
+        min-height: 77.83px;
+        padding: 0 .75rem;
+        
+    }
+
+    .fixed-top {
+        position: fixed;
     }
 
     .nav-logo {
@@ -47,30 +54,41 @@ nav {
     .nav-padding {
         padding-left: 0;
         padding-right: 0;
+
+        .navbar-brand {
+            margin: 0;
+            padding: 0;
+        }
     }
     
     .navbar-nav {
         position: relative;
         display: inline-block;
         width: 33.33%;
-        display: table;
+        display: contents;
 
         .nav-item {
-            margin: 0;
+            margin: auto;
             display: table-cell;
 
             .nav-link {
-                font-size: 0.4em;
+                font-size: 0.5em;
                 font-weight: 600;
             }
         }
     }
     .mr-auto {
-        margin-right: unset !important;
-        float: left;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     .ml-auto {
-        margin-left: unset !important;
+        margin: 0 !important;
+        padding: 0 !important;
+
+        .language:first-child {
+            text-align: right;
+            margin-left: 20px;
+        }
     }
 }
