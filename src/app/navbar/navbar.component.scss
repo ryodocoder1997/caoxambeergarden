@@ -18,6 +18,10 @@ nav {
 .nav-item {
     margin: 0 70px;
     color: #051832;
+
+    .nav-link {
+        cursor: pointer;
+    }
 }
 
 .language {

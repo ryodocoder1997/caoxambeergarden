@@ -12,4 +12,14 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  scroll(id: string) {
+    var target = document.getElementById(id);
+    if (!target) {
+      return;
+    }
+    target.scrollIntoView();
+    setTimeout(() => {
+      window.scrollBy(0,-77.83)
+      }, 400);
+  }
 }

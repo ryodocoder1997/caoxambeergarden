@@ -28,21 +28,44 @@ export class MenuComponent implements OnInit {
   }
 
   getDrinksMenu() {
-    this.drinksService.getDBFromFireBase().subscribe(result => {
+    this.drinksService.getDBFromFireBase1().subscribe(result => {
       if (result) {
         this.dataSource = result;
         this.bindModelToDataSource();
         this.calculateDataAndPaging();
       }
-    })
+    });
+  }
+
+  onChangeCategory(isRegularCategory: boolean) {
+    if (isRegularCategory) {
+      this.drinksService.getDBFromFireBase1().subscribe(result => {
+        if (result) {
+          this.dataSource = result;
+          this.pageIndex = 0;
+          this.bindModelToDataSource();
+          this.calculateDataAndPaging();
+          this.dataSource[0].isSelect = true;
+        }
+      });
+    } else {
+      this.drinksService.getDBFromFireBase2().subscribe(result => {
+        if (result) {
+          this.dataSource = result;
+          this.pageIndex = 0;
+          this.bindModelToDataSource();
+          this.calculateDataAndPaging();
+          this.dataSource[0].isSelect = true;
+        }
+      })
+    }
   }
 
   bindModelToDataSource() {
     this.dataSource.forEach(item => {
       item.isSelect = false
     });
-
-    this.dataSource[0].isSelect = true;
+    this.dataView = this.dataSource;
   }
 
   calculateDataAndPaging(onSearching: boolean = false) {
@@ -92,7 +115,9 @@ export class MenuComponent implements OnInit {
       this.dataFilter = this.dataFilter.filter(x => x.name.toLowerCase().includes(this.searchText.toLowerCase()));
       this.dataView = this.dataFilter;
       this.calculateDataAndPaging(true);
-      this.dataView[0].isSelect = true;
+      if (this.dataView.length > 0) {
+        this.dataView[0].isSelect = true;
+      }
     }
   }
 }

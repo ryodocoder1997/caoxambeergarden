@@ -7,30 +7,29 @@ style="background: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)),
         <h1 class="body-title">Các loại thức uống</h1>
 
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-4">
+            <div class="row group">
+                <div class="col-lg-4 col-xs-2 category-group">
                     <div class="btn-group btn-group-toggle group-button" data-toggle="buttons">
                         <label class="btn variant-button active">
-                            <input type="radio" name="options" id="option1" autocomplete="off" checked> Dạng chai
+                            <input type="radio" name="options" id="option1" autocomplete="off" checked (click)="onChangeCategory(true)"> Dạng chai
                         </label>
                         <label class="btn variant-button">
-                            <input type="radio" name="options" id="option2" autocomplete="off"> Dạng ly
+                            <input type="radio" name="options" id="option2" autocomplete="off" (click)="onChangeCategory(false)"> Dạng ly
                         </label>
                     </div>
                 </div>
 
-                <div class="col-8">
+                <div class="col-lg-8 col-xs-6 search-bar-group">
                     <div class="search-bar">
                         <input class="form-control" type="text" placeholder="Tìm nhanh tên theo sản phẩm"
                             aria-label="Search" (input)="onTextChange($event)">
                         <span><i class="fa fa-search search-icon"></i></span>
                     </div>
                 </div>
-
             </div>
         </div>
         <div class="row">
-            <div class="col-5 menu-list">
+            <div class="col-lg-5 col-12-xs menu-list">
                 <app-menu-list
                 [dataSource]="dataView"
                 (selectedRow)="onSelectRow($event)"></app-menu-list>

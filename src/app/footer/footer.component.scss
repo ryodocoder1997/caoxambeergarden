@@ -28,14 +28,24 @@
         .club-brand {
             font-size: 20px;
         }
+        .fa-icon {
+            width: 100%;
+            display: inline-block;
+            margin-left: 10px;
 
-        .icon {
-            padding-right: 50px;
+            .icon {
+                padding-right: 50px;
+            }
         }
     }
 
     .google-map {
-        top: -60px;
+        position: relative;
+
+        iframe {
+            position: absolute;
+            top: -60px;
+        }
     }
 
     .footer-copyright {
@@ -44,3 +54,76 @@
         color: rgba(255, 255, 255, 0.5);
     }
 }
+
+  // -------------------------------------------- RESPONSIVE --------------------------------------------
+  @media screen and (max-width: 768px) {
+      .footer-experience{
+          width: 100%;
+          height: 200px;
+          align-items: flex-start;
+        .footer-title {
+            padding: 30px 0;
+            font-size: 1.25em;
+            margin-top: 0;
+            vertical-align: top;
+        }
+      }
+
+      .footer-information {
+        width: 100%;
+        height: auto;
+        background-image: linear-gradient(#051832, #010710);
+        color: #fff;
+        display: inline-block;
+    
+        .club-info {
+            padding-top: 160px;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-bottom: 40px;
+            width: 100%;
+            text-align: center;
+    
+            .club-name {
+                font-size: 2em;
+            }
+    
+            .club-brand {
+                font-size: 1em;
+            }
+    
+            .fa-icon {
+                width: 100%;
+                display: inline-block;
+                margin: 0;
+                justify-content: center;
+    
+                .icon {
+                    display: contents;
+                }
+                .icon:first-child::before {
+                    padding-right: 50px;
+                }
+            }
+        }
+    
+        .google-map {
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            iframe {   
+                position: absolute;
+                top: -480px;
+                left: 35px;
+                width: 80%;
+                height: 200px;
+            }
+        }
+    
+        .footer-copyright {
+            font-size: .75em;
+            padding-bottom: 10px;
+        }
+    }
+  }
