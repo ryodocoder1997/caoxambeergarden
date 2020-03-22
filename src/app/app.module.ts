@@ -12,6 +12,11 @@ import { MenuDetailComponent } from './menu/menu-detail/menu-detail.component';
 import { PaginationComponent } from './shared/components/pagination/pagination.component';
 import { FooterComponent } from './footer/footer.component';
 
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+
 
 @NgModule({
   declarations: [
@@ -27,7 +32,9 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

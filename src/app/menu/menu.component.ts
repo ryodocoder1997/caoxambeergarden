@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DrinksService } from 'src/services/drinks.service';
 import { MenuDrinks } from 'src/model/menu-drinks.model';
 
+import { AngularFirestore } from '@angular/fire/firestore';
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -19,7 +21,8 @@ export class MenuComponent implements OnInit {
   searchText: string = '';
 
   constructor(
-    private drinksService: DrinksService
+    private drinksService: DrinksService,
+    private db: AngularFirestore
   ) { }
 
   ngOnInit() {
@@ -28,6 +31,8 @@ export class MenuComponent implements OnInit {
   }
 
   getDrinksMenu() {
+    const test = this.db.collection('BEERPROFILE').valueChanges();
+    console.log(test);
     this.drinksService.getDBFromFireBase1().subscribe(result => {
       if (result) {
         this.dataSource = result;
