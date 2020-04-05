@@ -3,6 +3,7 @@ import { DrinksService } from 'src/services/drinks.service';
 import { MenuDrinks } from 'src/model/menu-drinks.model';
 
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-menu',
@@ -20,6 +21,8 @@ export class MenuComponent implements OnInit {
   totalPage: number = 0;
   searchText: string = '';
 
+  test: Observable<any[]>;
+
   constructor(
     private drinksService: DrinksService,
     private db: AngularFirestore
@@ -27,43 +30,41 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.getDrinksMenu();
-    this.dataView[0].isSelect = true;
   }
 
   getDrinksMenu() {
-    const test = this.db.collection('BEERPROFILE').valueChanges();
-    console.log(test);
-    this.drinksService.getDBFromFireBase1().subscribe(result => {
-      if (result) {
-        this.dataSource = result;
-        this.bindModelToDataSource();
-        this.calculateDataAndPaging();
-      }
+    this.drinksService.getDBFromFireBase().subscribe(actionArray => {
+      this.dataSource = actionArray.map(item => {
+        return {
+          id: item.payload.doc.id,
+          ...item.payload.doc.data()
+        } as MenuDrinks;
+      }).filter(x => x.id != 'B Model');
+      this.buildDataSource();
+      console.log(this.dataSource);
+
     });
   }
 
   onChangeCategory(isRegularCategory: boolean) {
     if (isRegularCategory) {
-      this.drinksService.getDBFromFireBase1().subscribe(result => {
-        if (result) {
-          this.dataSource = result;
-          this.pageIndex = 0;
-          this.bindModelToDataSource();
-          this.calculateDataAndPaging();
-          this.dataSource[0].isSelect = true;
-        }
-      });
+      this.getDrinksMenu();
     } else {
       this.drinksService.getDBFromFireBase2().subscribe(result => {
         if (result) {
           this.dataSource = result;
-          this.pageIndex = 0;
-          this.bindModelToDataSource();
-          this.calculateDataAndPaging();
-          this.dataSource[0].isSelect = true;
+          this.buildDataSource();
+
         }
       })
     }
+  }
+
+  buildDataSource() {
+    this.pageIndex = 0;
+    this.bindModelToDataSource();
+    this.calculateDataAndPaging();
+    this.dataSource[0].isSelect = true;
   }
 
   bindModelToDataSource() {
@@ -74,14 +75,14 @@ export class MenuComponent implements OnInit {
   }
 
   calculateDataAndPaging(onSearching: boolean = false) {
-    const lenght = !onSearching? this.dataSource.length : this.dataFilter.length;
-    this.totalPage = lenght % this.pageSize === 0 ? lenght/this.pageSize : Math.floor((lenght/this.pageSize) + 1);
+    const lenght = !onSearching ? this.dataSource.length : this.dataFilter.length;
+    this.totalPage = lenght % this.pageSize === 0 ? lenght / this.pageSize : Math.floor((lenght / this.pageSize) + 1);
     const start = this.pageIndex * this.pageSize;
     const end = ((this.pageIndex + 1) * this.pageSize);
     if (!onSearching) {
       this.dataView = this.dataSource.slice(start, end);
     } else {
-      this.dataView = this.dataFilter.slice(start,end);
+      this.dataView = this.dataFilter.slice(start, end);
     }
     this.clearSelectedRow();
     this.selectedRow = this.dataView[0];
@@ -117,7 +118,7 @@ export class MenuComponent implements OnInit {
       this.dataView[0].isSelect = true;
     } else {
       this.dataFilter = this.dataSource;
-      this.dataFilter = this.dataFilter.filter(x => x.name.toLowerCase().includes(this.searchText.toLowerCase()));
+      this.dataFilter = this.dataFilter.filter(x => x.NAME.toLowerCase().includes(this.searchText.toLowerCase()));
       this.dataView = this.dataFilter;
       this.calculateDataAndPaging(true);
       if (this.dataView.length > 0) {

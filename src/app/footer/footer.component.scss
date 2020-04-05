@@ -43,6 +43,9 @@
         position: relative;
 
         iframe {
+            width: 640px;
+            height: 350px;
+            border: 0;
             position: absolute;
             top: -60px;
         }
@@ -56,6 +59,7 @@
 }
 
   // -------------------------------------------- RESPONSIVE --------------------------------------------
+  // *----- PHONE -----*
   @media screen and (max-width: 768px) {
       .footer-experience{
           width: 100%;
@@ -116,8 +120,11 @@
                 position: absolute;
                 top: -480px;
                 left: 35px;
-                width: 80%;
+                width: 85%;
                 height: 200px;
+                justify-content: center;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
     
@@ -126,4 +133,15 @@
             padding-bottom: 10px;
         }
     }
-  }
+}
+
+@media screen and (max-width: 1024px) {
+    .google-map {
+        iframe {   
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+}

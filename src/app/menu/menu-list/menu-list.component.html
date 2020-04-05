@@ -3,9 +3,9 @@
         <section>
                 <ng-container *ngFor="let item of dataSource">
                     <header (click)="onSelect(item)" [class.active]="item.isSelect">
-                        <span class="item-name">{{item.name}}</span>
+                        <span class="item-name">{{item.NAME}}</span>
                         <span class="spacer"></span>
-                        <span class="item-price">{{item.price | currency : ' ' : 'code' : '0.0-0'}}đ</span>
+                        <span class="item-price">{{item.PRICE | currency : ' ' : 'code' : '0.0-0'}}đ</span>
                     </header>
                 </ng-container>
   

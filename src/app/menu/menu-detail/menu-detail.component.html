@@ -6,16 +6,15 @@
                     <img class="item-img">
                 </div>
                 <div class="col-8">
-                    <h2 class="item-name">{{selectedRow.name}}</h2>
+                    <h2 class="item-name">{{selectedRow.NAME}}</h2>
                     <hr class="hr" />
                     <div class="item-description">{{selectedRow.summaryDescription}}</div>
-                    <span class="item-abv">ABV: {{selectedRow.abv}}%</span>
-                    <span class="item-ibu">IBU: {{selectedRow.ibu}}</span>
-                    <div class="item-color">Màu: {{selectedRow.color}}</div>
-                    <div class="item-price">{{selectedRow.price | currency : ' ' : 'code' : '0.0-0'}}đ</div>
+                    <span class="item-abv">ABV: {{selectedRow.ABV}}%</span>
+                    <span class="item-ibu" *ngIf="selectedRow.IBU">IBU: {{selectedRow.IBU}}</span>
+                    <div class="item-price">{{selectedRow.PRICE | currency : ' ' : 'code' : '0.0-0'}}đ</div>
                 </div>
             </div>
-            <div class="item-long-description">{{selectedRow.detailDescription}}</div>
+            <div class="item-long-description" *ngIf="selectedRow.DISCRIPTION">{{selectedRow.DISCRIPTION}}</div>
         </div>
 
         <div class="container" *ngIf="!selectedRow">

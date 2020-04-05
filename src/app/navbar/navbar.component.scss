@@ -35,7 +35,7 @@ nav {
 }
 
 // -------------------------------------------- RESPONSIVE --------------------------------------------
-
+// *----- PHONE -----*
 @media screen and (max-width: 768px) {
     .navbar {
         width: 100vw;
@@ -77,6 +77,69 @@ nav {
 
             .nav-link {
                 font-size: 0.5em;
+                font-weight: 600;
+            }
+        }
+    }
+    .mr-auto {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .ml-auto {
+        margin: 0 !important;
+        padding: 0 !important;
+
+        .language:first-child {
+            text-align: right;
+            margin-left: 20px;
+        }
+    }
+}
+
+  // *----- IPAD PRO -----*
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .navbar {
+        width: 100vw;
+        height: 77.83px;
+        position: relative;
+        min-height: 77.83px;
+        padding: 0 .75rem;
+        
+    }
+
+    .fixed-top {
+        position: fixed;
+    }
+
+    .nav-logo {
+        position: relative;
+        width: 2.5em;
+        margin-left: 30px;
+    }
+
+    .nav-padding {
+        padding-left: 0;
+        padding-right: 0;
+
+        .navbar-brand {
+            margin: 0;
+            padding: 0;
+        }
+    }
+    
+    .navbar-nav {
+        position: relative;
+        display: inline-block;
+        width: 33.33%;
+        display: contents;
+
+        .nav-item {
+            margin: auto;
+            display: table-cell;
+
+            .nav-link {
+                font-size: 1em;
                 font-weight: 600;
             }
         }

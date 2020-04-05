@@ -1,11 +1,11 @@
 export interface MenuDrinks {
     id: string;
-    name: string;
+    NAME: string;
     summaryDescription: string;
     color: string;
-    abv: string;
-    ibu: string;
-    detailDescription: string;
-    price: string;
+    ABV: string;
+    IBU: string;
+    DISCRIPTION: string;
+    PRICE: string;
     isSelect ?: boolean;
 }
