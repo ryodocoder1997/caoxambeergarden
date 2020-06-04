@@ -3,19 +3,26 @@
         <a class="navbar-brand" href="#"><img src="../../assets/navbar-logo.png" class="nav-logo"></a>
         <ul class="nav navbar-nav mr-auto">
             <li class="nav-item">
-                <span class="nav-link" (click)="scroll('about-us')">Về chúng tôi</span>
+                <span class="nav-link" (click)="scroll('event')">Event</span>
             </li>
             <li class="nav-item">
-                <span class="nav-link" (click)="scroll('drinks')">Các loại thức uống</span>
+                <span class="nav-link" (click)="scroll('combo')">Combo</span>
+            </li>
+            <li class="nav-item">
+                <span class="nav-link" (click)="scroll('menu')">Menu</span>
+            </li>
+            <li class="nav-item">
+                <span class="nav-link" (click)="scroll('hotline')">Hotline</span>
             </li>
         </ul>
 
         <ul class="navbar-nav ml-auto">
             <li class="nav-item language">
-                <a class="nav-link" href="#">Tiếng Việt</a>
+                <a class="nav-link" href="#" [ngClass]="{'active' : selectedVietnameseLanguage}" (click)="onChangeSelectedLanguage(true)"><img class="flag-icon" src="../../assets/vietnam.png"/></a>
             </li>
+            <span class="line-down"></span>
             <li class="nav-item language">
-                <a class="nav-link" href="#">Tiếng Anh</a>
+                <a class="nav-link" href="#" [ngClass]="{'active' : !selectedVietnameseLanguage}" (click)="onChangeSelectedLanguage(false)"><img class="flag-icon" src="../../assets/america.png"/></a>
             </li>
         </ul>
     </div>

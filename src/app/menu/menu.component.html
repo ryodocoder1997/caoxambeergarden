@@ -1,5 +1,4 @@
-<div class="container-fluid body"
-style="background: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url(../../assets/banner2.jpg);
+<div class="container-fluid body" style="background: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url(../../assets/banner2.jpg);
             background-repeat: no-repeat;
             background-size: 100% 100%;
             background-position: center;">
@@ -8,13 +7,48 @@ style="background: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)),
 
         <div class="container-fluid">
             <div class="row group">
-                <div class="col-lg-4 col-xs-2 col-md-4 category-group">
+                <div class="col-lg-3 col-xs-2 col-md-4 category-group">
                     <div class="btn-group btn-group-toggle group-button" data-toggle="buttons">
                         <label class="btn variant-button active">
-                            <input type="radio" name="options" id="option1" autocomplete="off" checked (click)="onChangeCategory(true)"> Dạng chai
+                            <input type="radio" name="options" id="option1" autocomplete="off" checked
+                                (click)="onChangeCategory(true)">
+                            <svg class="chai-icon" width="42" height="37" viewBox="0 0 42 37" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.5" y="0.5" width="41" height="36" rx="7.5" fill="white" stroke="#D27827" />
+                                <path
+                                    d="M26.6172 18.273L23.4783 13.878V9.52148H18.2609V13.878L15.122 18.273C15.0426 18.3834 14.9999 18.516 15 18.6519V31.0432C15 31.5621 15.2061 32.0598 15.5731 32.4267C15.94 32.7936 16.4376 32.9997 16.9565 32.9997H24.7826C25.3015 32.9997 25.7992 32.7936 26.1661 32.4267C26.533 32.0598 26.7391 31.5621 26.7391 31.0432V18.6519C26.7392 18.516 26.6966 18.3834 26.6172 18.273ZM24.7826 27.1302C24.7826 27.3031 24.7139 27.469 24.5916 27.5913C24.4693 27.7136 24.3034 27.7824 24.1304 27.7824H17.6087C17.4357 27.7824 17.2698 27.7136 17.1475 27.5913C17.0252 27.469 16.9565 27.3031 16.9565 27.1302V23.2171C16.9565 23.0442 17.0252 22.8783 17.1475 22.756C17.2698 22.6337 17.4357 22.565 17.6087 22.565H24.1304C24.3034 22.565 24.4693 22.6337 24.5916 22.756C24.7139 22.8783 24.7826 23.0442 24.7826 23.2171V27.1302Z"
+                                    fill="#D27827" />
+                                <path
+                                    d="M23.4783 8.21739V3.65217C23.4783 3.47921 23.4095 3.31332 23.2872 3.19102C23.1649 3.06871 22.999 3 22.8261 3H18.913C18.7401 3 18.5742 3.06871 18.4519 3.19102C18.3296 3.31332 18.2609 3.47921 18.2609 3.65217V8.21739H23.4783Z"
+                                    fill="#D27827" />
+                            </svg>
+
                         </label>
                         <label class="btn variant-button">
-                            <input type="radio" name="options" id="option2" autocomplete="off" (click)="onChangeCategory(false)"> Dạng ly
+                            <input type="radio" name="options" id="option2" autocomplete="off"
+                                (click)="onChangeCategory(false)">
+                            <svg class="ly-icon" width="42" height="37" viewBox="0 0 42 37" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.5" y="0.5" width="41" height="36" rx="7.5" fill="white" stroke="#D27827" />
+                                <path
+                                    d="M32.25 17.125H28.5V16.1875C29.625 15.3438 30.375 14.0312 30.375 12.4375C30.375 9.625 27.9375 7.375 25.125 7.75C24.0938 5.40625 21.75 4 19.125 4C16.5 4 14.25 5.5 13.125 7.75C10.3125 7.375 7.875 9.625 7.875 12.4375C7.875 13.9375 8.625 15.3438 9.75 16.1875V30.25C9.75 32.3125 11.4375 34 13.5 34H24.75C26.8125 34 28.5 32.3125 28.5 30.25V26.5H30.375C31.9688 26.5 33.1875 25.2812 33.1875 23.6875V18.0625C33.1875 17.5 32.8125 17.125 32.25 17.125ZM11.0625 10.1875C11.9062 9.625 12.5625 9.4375 13.4062 9.8125C13.6875 9.90625 13.875 9.90625 14.1562 9.71875C14.4375 9.625 14.625 9.4375 14.625 9.15625C14.9062 8.21875 15.2812 7.375 16.0312 6.90625C19.125 4.84375 22.5938 6.34375 23.5313 9.25C23.7188 9.4375 23.8125 9.625 24.0938 9.71875C24.2812 9.8125 24.5625 9.8125 24.8438 9.8125C25.7812 9.53125 26.4375 9.625 27.1875 10.1875C27.9375 10.6562 28.5 11.5 28.5 12.4375C28.5 13.9375 27.1875 15.25 25.6875 15.25H19.125C18.5625 15.25 18.1875 15.625 18.1875 16.1875V22.2812C18.1875 23.0312 17.5312 23.6875 16.7812 23.6875C16.0312 23.6875 15.375 23.0312 15.375 22.2812V16.1875C15.375 15.625 15 15.25 14.4375 15.25H12.5625C11.0625 15.25 9.75 14.0312 9.75 12.4375C9.75 11.5 10.3125 10.6562 11.0625 10.1875ZM31.3125 23.6875C31.3125 24.25 30.9375 24.625 30.375 24.625H28.5V19H31.3125V23.6875Z"
+                                    fill="#D27827" />
+                            </svg>
+                        </label>
+                        <label class="btn variant-button">
+                            <input type="radio" name="options" id="option3" autocomplete="off"
+                                (click)="onChangeCategory(false)">
+                            <svg class="food-icon" width="43" height="37" viewBox="0 0 43 37" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="1.22974" y="0.5" width="41" height="36" rx="7.5" fill="white"
+                                    stroke="#D27827" />
+                                <path
+                                    d="M8.7019 25.913H34.7569C34.9356 25.913 35.1065 25.84 35.2291 25.7102C35.3523 25.5811 35.4169 25.407 35.4084 25.2289C35.0889 18.7541 30.3176 13.5335 24.1389 12.4385C24.6626 11.86 24.9906 11.1009 24.9906 10.2609C24.9906 8.46283 23.5278 7 21.7297 7C19.9317 7 18.4689 8.46283 18.4689 10.2609C18.4689 11.1009 18.7969 11.86 19.3206 12.4385C13.1419 13.5335 8.3706 18.7541 8.05103 25.2289C8.04256 25.407 8.10712 25.5811 8.23038 25.7102C8.35299 25.84 8.52321 25.913 8.7019 25.913ZM21.7297 8.30435C22.8084 8.30435 23.6863 9.18217 23.6863 10.2609C23.6863 11.3396 22.8084 12.2174 21.7297 12.2174C20.651 12.2174 19.7732 11.3396 19.7732 10.2609C19.7732 9.18217 20.651 8.30435 21.7297 8.30435Z"
+                                    fill="#D27827" />
+                                <path
+                                    d="M36.0776 27.8691H7.38197C7.02197 27.8691 6.7298 28.1607 6.7298 28.5213C6.7298 28.882 7.02197 29.1735 7.38197 29.1735H36.0776C36.4376 29.1735 36.7298 28.882 36.7298 28.5213C36.7298 28.1607 36.4376 27.8691 36.0776 27.8691Z"
+                                    fill="#D27827" />
+                            </svg>
                         </label>
                     </div>
                 </div>
@@ -30,18 +64,50 @@ style="background: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)),
         </div>
         <div class="row">
             <div class="col-lg-5 col-12-xs menu-list">
-                <app-menu-list
-                [dataSource]="dataView"
-                (selectedRow)="onSelectRow($event)"></app-menu-list>
+                <app-menu-list [dataSource]="dataView" (selectedRow)="onSelectRow($event, menuDetail)"></app-menu-list>
             </div>
             <div class="col-6 menu-detail">
                 <app-menu-detail [selectedRow]="selectedRow"></app-menu-detail>
             </div>
         </div>
     </div>
-    <app-pagination class="pagination" 
-                    [totalPage]="totalPage"
-                    [pageIndex]="pageIndex"
-                    [pageSize]="pageSize"
-                    (onSelectPage)="onSelectPage($event)"></app-pagination>
+
+    <ng-template #menuDetail let-modal>
+        <button class="close-btn" (click)="modal.dismiss('Cross click')">&times;</button>
+        <div class="menu-detail">
+            <div class="menu-card">
+                <div class="container" *ngIf="selectedRow">
+                    <div class="row">
+                        <div class="col-4">
+                            <img class="item-img">
+                        </div>
+                        <div class="col-8">
+                            <h2 class="item-name">{{selectedRow.NAME}}</h2>
+                            <hr class="hr" />
+                            <div class="item-description">{{selectedRow.summaryDescription}}</div>
+                            <span class="item-abv">ABV: {{selectedRow.ABV}}%</span>
+                            <span class="item-ibu" *ngIf="selectedRow.IBU">IBU: {{selectedRow.IBU}}</span>
+                            <div class="item-price">{{selectedRow.PRICE | currency : ' ' : 'code' : '0.0-0'}}đ</div>
+                        </div>
+                    </div>
+                    <div class="item-long-description" *ngIf="selectedRow.DISCRIPTION">{{selectedRow.DISCRIPTION}}</div>
+                </div>
+        
+                <div class="container" *ngIf="!selectedRow">
+                    <div class="row">
+                        <div class="col-4">
+                            <img class="item-img">
+                        </div>
+                        <div class="col-8">
+                            <h2 class="item-name">Không tìm thấy dữ liệu nào...</h2>
+                            <hr class="hr" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+
+    <app-pagination class="pagination" [totalPage]="totalPage" [pageIndex]="pageIndex" [pageSize]="pageSize"
+        (onSelectPage)="onSelectPage($event)"></app-pagination>
 </div>

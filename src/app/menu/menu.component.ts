@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DrinksService } from 'src/services/drinks.service';
 import { MenuDrinks } from 'src/model/menu-drinks.model';
-
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { NgbModal, NgbActiveModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { MenuDetailComponent } from './menu-detail/menu-detail.component';
 
 @Component({
   selector: 'app-menu',
@@ -19,13 +19,13 @@ export class MenuComponent implements OnInit {
   pageSize: number = 10;
   pageIndex: number = 0;
   totalPage: number = 0;
+  innerWidth: number = 0;
   searchText: string = '';
-
-  test: Observable<any[]>;
 
   constructor(
     private drinksService: DrinksService,
-    private db: AngularFirestore
+    private db: AngularFirestore,
+    private modalService: NgbModal
   ) { }
 
   ngOnInit() {
@@ -41,8 +41,6 @@ export class MenuComponent implements OnInit {
         } as MenuDrinks;
       }).filter(x => x.id != 'B Model');
       this.buildDataSource();
-      console.log(this.dataSource);
-
     });
   }
 
@@ -88,7 +86,11 @@ export class MenuComponent implements OnInit {
     this.selectedRow = this.dataView[0];
   }
 
-  onSelectRow(event) {
+  onSelectRow(event, modal) {
+    this.innerWidth = window.innerWidth;
+    if (this.innerWidth <= 768) {
+      this.modalService.open(modal, { size: 'lg', centered: true });
+    }
     this.selectedRow = event;
     this.clearSelectedRow();
     const selectedIndex = this.dataView.findIndex(x => x.id === event.id);

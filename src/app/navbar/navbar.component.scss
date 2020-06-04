@@ -21,7 +21,23 @@ nav {
 
     .nav-link {
         cursor: pointer;
+        .flag-icon {
+            width: 40px;
+            height: 40px;
+            filter:  grayscale(100%);
+        }
     }
+
+    .active {
+        .flag-icon {
+            filter:  grayscale(0%);
+        }
+    }
+}
+
+.line-down {
+    height: 60px;
+    border: 0.5px solid black;
 }
 
 .language {
@@ -78,7 +94,15 @@ nav {
             .nav-link {
                 font-size: 0.5em;
                 font-weight: 600;
+                .flag-icon {
+                    width: 20px;
+                    height: 20px;
+                }
             }
+        }
+
+        .line-down {
+            height: 20px;
         }
     }
     .mr-auto {
@@ -141,7 +165,15 @@ nav {
             .nav-link {
                 font-size: 1em;
                 font-weight: 600;
+                .flag-icon {
+                    width: 30px;
+                    height: 30px;
+                }
             }
+        }
+
+        .line-down {
+            height: 30px;
         }
     }
     .mr-auto {

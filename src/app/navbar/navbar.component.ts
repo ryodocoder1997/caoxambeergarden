@@ -7,12 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  public selectedVietnameseLanguage = true;
   constructor() { }
 
   ngOnInit() {
   }
 
   scroll(id: string) {
+    var timeScroll = 600;
     var target = document.getElementById(id);
     if (!target) {
       return;
@@ -20,6 +22,10 @@ export class NavbarComponent implements OnInit {
     target.scrollIntoView();
     setTimeout(() => {
       window.scrollBy(0,-77.83)
-      }, 400);
+      }, timeScroll);
+  }
+
+  onChangeSelectedLanguage(value: boolean) {
+    this.selectedVietnameseLanguage = value;
   }
 }

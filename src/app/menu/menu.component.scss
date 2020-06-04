@@ -1,3 +1,8 @@
+* {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 .body {
     width: 100%;
     height: auto;
@@ -22,17 +27,18 @@
   }
   
   .group-button {
+    width: 150px;
     .variant-button {
-      width: 150px;
+      width: 33.33%;
       height: auto;
       border-radius: 50px;
-      border: 1px solid #051832;
-      background-color: #fff;
       font-size: 18px;
-      margin: 0 15px;
+      margin: 0;
+      padding: 0;
       align-items: center;
       justify-content: center;
       vertical-align: middle;
+      filter: grayscale(100%);
   
       &:hover {
         filter: brightness(150%);
@@ -41,8 +47,8 @@
     }
   
     .active {
-      background-color: #051832;
       color: #fff;
+      filter: grayscale(0%);
     }
   }
   
@@ -77,6 +83,76 @@
     padding: 20px;
   }
 
+  .close-btn {
+    width: 40px;
+    height: 40px;
+    line-height: 11px;
+    font-size: 30px;
+    background-color: #fff;
+    border-radius: 70%;
+    position: absolute;
+    right: -15px;
+    top: -15px
+  }
+
+  .menu-detail {
+    width: 100%;
+    color: #051832;
+
+    .menu-card {
+        width: 100%;
+        height: auto;
+        min-height: 315px;
+        background-color: #fff;
+        margin: 15px auto;
+        padding: 15px 0;
+        border-radius: 15px;
+
+        .item-img {
+            width: 130px;
+            height: 200px;
+            margin: 30px 15px;
+            background-color: #000;
+        }
+
+        .item-name {
+            margin: 20px 0;
+            text-align: left;
+            font-size: 25px;
+        }
+
+        .hr {
+            background-color: #051832;
+            border: 0 none;
+            color: #051832;
+            height: 1px;
+        }
+
+        .item-description {
+            margin-bottom: 20px;
+        }
+
+        .item-abv {
+        }
+
+        .item-ibu {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        .item-color {
+            font-size: 13px;
+            margin-top: 10px;
+        }
+
+        .item-price {
+            width: 100%;
+            font-size: 25px;
+            text-align: right;
+        }
+    }
+}
+
   // -------------------------------------------- RESPONSIVE --------------------------------------------
   // *----- PHONE -----*
   @media screen and (max-width: 768px) {
@@ -95,6 +171,11 @@
       
           .variant-button {
             font-size: .75em;
+
+            .chai-icon {
+              width: 40px;
+              height: 35px;
+            }
           }
         }
 
@@ -115,18 +196,13 @@
                 width: 45%;
                 height: auto;
                 border-radius: 50px;
-                border: 1px solid #051832;
-                background-color: #fff;
                 font-size: .75em;
                 padding: 0;
                 margin: 0;
                 align-items: center;
                 justify-content: center;
                 vertical-align: middle;
-  
-                &:first-child {
-                  margin-right: 10px;
-                }
+                filter: grayscale(100%);
             
                 &:hover {
                   filter: brightness(150%);
@@ -135,8 +211,7 @@
               }
             
               .active {
-                background-color: #051832;
-                color: #fff;
+                filter: grayscale(0%);
               }
             }
           }
@@ -182,6 +257,14 @@
         border-right: none;
         margin-left: 0;
       }
+
+      .menu-detail {
+        .menu-card {
+          .item-img {
+            background-color: red;
+          }
+        }
+      }
     }
   }
 
@@ -222,18 +305,13 @@
                 width: 45%;
                 height: auto;
                 border-radius: 50px;
-                border: 1px solid #051832;
-                background-color: #fff;
                 font-size: .75em;
                 padding: 0;
                 margin: 0;
                 align-items: center;
                 justify-content: center;
                 vertical-align: middle;
-  
-                &:first-child {
-                  margin-right: 10px;
-                }
+                filter: grayscale(100%);
             
                 &:hover {
                   filter: brightness(150%);
@@ -242,8 +320,7 @@
               }
             
               .active {
-                background-color: #051832;
-                color: #fff;
+                filter: grayscale(0%);
               }
             }
           }
