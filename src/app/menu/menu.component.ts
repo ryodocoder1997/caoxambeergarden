@@ -69,6 +69,7 @@ export class MenuComponent implements OnInit {
     this.dataSource.forEach(item => {
       item.isSelect = false
     });
+    this.dataSource[0].NAME = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
     this.dataView = this.dataSource;
   }
 

@@ -1,17 +1,17 @@
 <ul class="menu">
     <li class="menu-item">
         <section>
-                <ng-container *ngFor="let item of dataSource">
-                    <header (click)="onSelect(item)" [class.active]="item.isSelect">
-                        <span class="item-name">{{item.NAME}}</span>
-                        <span class="spacer"></span>
-                        <span class="item-price">{{item.PRICE | currency : ' ' : 'code' : '0.0-0'}}đ</span>
-                    </header>
-                </ng-container>
-  
-                <header *ngIf="dataSource.length === 0">
-                    <span class="item-name active">Không tìm thấy dữ liệu nào...</span>
+            <ng-container *ngFor="let item of dataSource">
+                <header (click)="onSelect(item)" [class.active]="item.isSelect">
+                    <span class="item-name">{{item.NAME}}</span>
+                    <span class="spacer"></span>
+                    <span class="item-price">{{item.PRICE | currency : ' ' : 'code' : '0.0-0'}}đ</span>
                 </header>
+            </ng-container>
+
+            <header *ngIf="dataSource.length === 0">
+                <span class="item-name active">Không tìm thấy dữ liệu nào...</span>
+            </header>
         </section>
     </li>
 </ul>
